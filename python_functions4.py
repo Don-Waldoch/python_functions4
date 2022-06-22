@@ -9,6 +9,9 @@
 #             num_within( 3,1,3) returns True,
 #             num_within(10,2,5) returns False.
 
+# Write a Python function called pascal() that prints out the first n rows of Pascal's triangle.
+
+
 def max_num(i, j, k):
     return max(i, j, k)
 
@@ -27,12 +30,26 @@ def rev_string(text):
 def num_within(i, j, k):
     return (j <= i and i <= k)
 
+
+def pascal(n):
+    Triangle = []
+    for row in range(n):
+        Triangle.append([])
+        for col in range(row+1):
+            if (col == 0 or col == row):
+                Triangle[row].append(1)
+            else:
+                Triangle[row].append(
+                    Triangle[row-1][col-1]+Triangle[row-1][col])
+    print(Triangle)
+    return
+
+
 # Call each function
-
-
 print(max_num(5, 3, 12))
 print(mult_list([1, 4, 7, 2]))
 print(rev_string("Hello World!"))
 print(num_within(3, 2, 4))
 print(num_within(3, 1, 3))
 print(num_within(10, 2, 5))
+pascal(5)
