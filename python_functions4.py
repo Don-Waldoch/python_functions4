@@ -32,6 +32,7 @@ def num_within(i, j, k):
 
 
 def pascal(n):
+    print()
     Triangle = []
     for row in range(n):
         Triangle.append([])
@@ -41,7 +42,7 @@ def pascal(n):
             else:
                 Triangle[row].append(
                     Triangle[row-1][col-1]+Triangle[row-1][col])
-    print(Triangle)
+        print(*Triangle[row])
     return
 
 
@@ -52,4 +53,5 @@ print(rev_string("Hello World!"))
 print(num_within(3, 2, 4))
 print(num_within(3, 1, 3))
 print(num_within(10, 2, 5))
+pascal(1)
 pascal(5)
